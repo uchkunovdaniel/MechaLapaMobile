@@ -1,6 +1,7 @@
 node_modules
 /pb_data
 package-lock.json
+.idea
 # Output
 .output
 .vercel
