@@ -1,0 +1,46 @@
+{
+	"name": "mechalapamobile",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	"devDependencies": {
+		"@capacitor/cli": "7.4.4",
+		"@sveltejs/adapter-auto": "^7.0.0",
+		"@sveltejs/adapter-node": "^5.4.0",
+		"@sveltejs/kit": "^2.47.1",
+		"@sveltejs/vite-plugin-svelte": "^6.2.1",
+		"@tailwindcss/vite": "^4.1.14",
+		"svelte": "^5.41.0",
+		"svelte-check": "^4.3.3",
+		"tailwindcss": "^4.1.14",
+		"typescript": "^5.9.3",
+		"vite": "^7.1.10"
+	},
+	"dependencies": {
+		"@capacitor-community/bluetooth-le": "^7.2.0",
+		"@capacitor/android": "^7.4.4",
+		"@capacitor/app": "7.1.0",
+		"@capacitor/core": "7.4.4",
+		"@capacitor/geolocation": "^7.1.5",
+		"@capacitor/haptics": "7.0.2",
+		"@capacitor/ios": "^7.4.4",
+		"@capacitor/keyboard": "7.0.3",
+		"@capacitor/status-bar": "7.0.3",
+		"@mapbox/mapbox-gl-geocoder": "^5.1.2",
+		"@mapbox/search-js-web": "^1.5.0",
+		"@maptiler/geocoding-control": "^2.1.7",
+		"@maptiler/sdk": "^3.8.0",
+		"@sveltejs/adapter-static": "^3.0.10",
+		"capacitor-liquid-glass": "file:capacitor-liquid-glass",
+		"pocketbase": "^0.26.3",
+		"svelte-openlayers": "^1.6.0"
+	}
+}

@@ -1,0 +1,7 @@
+{
+  "name": "mechalapa",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}
