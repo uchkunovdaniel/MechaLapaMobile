@@ -2,7 +2,7 @@
     import { OrbitControls } from '@threlte/extras'
     import {T, useLoader} from '@threlte/core';
     import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js";
-    const gltf = useLoader(GLTFLoader).load("http://localhost:8000/model.gltf");
+    const gltf = useLoader(GLTFLoader).load("https://raw.githubusercontent.com/uchkunovdaniel/MechaLapaMobile/refs/heads/main/model3d/model.gltf");
 </script>
 
 <T.PerspectiveCamera
@@ -34,8 +34,6 @@
 
 <section class="flex justify-center items-center">
     {#if $gltf}
-        {#if $gltf}
-            <T is={$gltf.scene} scale={0.29} rotation.x={Math.PI/2}/>
-        {/if}
+        <T is={$gltf.scene} scale={0.29} rotation.x={Math.PI/2}/>
     {/if}
 </section>
