@@ -25,7 +25,7 @@
 </T.PerspectiveCamera>
 
 <T.DirectionalLight
-        position.x={20}
+        position.x={-20}
         position.y={20}
         position.z={20}
         intensity={30}
@@ -35,6 +35,6 @@
 
 <section class="flex justify-center items-center">
     {#if $gltf}
-        <T is={$gltf.scene} scale={0.29} rotation.x={Math.PI/2}/>
+        <T.Mesh is={$gltf.scene} scale={0.29} rotation.x={Math.PI/2}/>
     {/if}
 </section>
