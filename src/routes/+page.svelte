@@ -3,7 +3,6 @@
     import {BleClient} from "@capacitor-community/bluetooth-le";
     import { Canvas } from "@threlte/core"
     import Scene from "$components/Scene.svelte";
-
     import {connected} from "$stores/connected";
     const SERVICE_UUID = "7d8b5ccd-ff95-4228-80fa-e7c51e09b54b"
     const CHARACTERISTIC_UUID = "90acaf49-dbdb-4c7b-8667-ada568397170"
