@@ -9,5 +9,8 @@ declare global {
 		// interface Platform {}
 	}
 }
-
+declare module '*.gltf' {
+    const src: string
+    export default src
+}
 export {};

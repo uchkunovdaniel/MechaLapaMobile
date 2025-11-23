@@ -1,21 +1,23 @@
 <script lang="ts">
     import Navbar from "$lib/components/Navbar.svelte";
-    import {connected} from "../../connected";
+    import {connected} from "$stores/connected";
     import {pb} from "../../pb";
+    import {onMount} from "svelte";
+    import type {RecordModel} from "pocketbase";
+    import Item from "$lib/components/Item.svelte";
+    import user from '$lib/assets/profile.svg'
 
     let friendsIds: string[] = $state([])
-
+    let friends: RecordModel[] = $state([])
     async function getFriends(): Promise<string[]> {
         if (pb.authStore.isValid) {
             return (await pb.collection("users").getOne(pb.authStore.record?.id as string)).friends
         } else return []
     }
-
-    friendsIds = await getFriends()
-
-    // const friends = await pb.collection("users").getOne(friendsIds[0])
-
-    console.log(friendsIds[0])
+    onMount(async () => {
+        friendsIds = await getFriends()
+        friends = await Promise.all(friendsIds.map(id => pb.collection("users").getOne(id)))
+    })
 </script>
 
 
@@ -25,7 +27,10 @@
 
 
     <!--{#each friends as friend}-->
-    <!--    <h1>{friend}</h1>-->
+        <Item classes="gap-4 justify-end">
+            <img src="{user} " alt="">
+            <h1 class="text-white subheading">Иван Иванов</h1>
+        </Item>
     <!--{/each}-->
     <Navbar style={"mt-auto"} />
 </main>

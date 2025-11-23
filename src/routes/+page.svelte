@@ -1,9 +1,10 @@
 <script lang="ts">
-    import device from '$lib/assets/device.svg'
-    import Navbar from "$lib/components/Navbar.svelte";
+    import Navbar from "$components/Navbar.svelte";
     import {BleClient} from "@capacitor-community/bluetooth-le";
+    import { Canvas } from "@threlte/core"
+    import Scene from "$components/Scene.svelte";
 
-    import {connected} from "../connected";
+    import {connected} from "$stores/connected";
     const SERVICE_UUID = "7d8b5ccd-ff95-4228-80fa-e7c51e09b54b"
     const CHARACTERISTIC_UUID = "90acaf49-dbdb-4c7b-8667-ada568397170"
 
@@ -73,8 +74,11 @@
         <h1 class="heading text-(--white) text-center">Здравей</h1>
         <h2 class="subheading text-(--white) text-center">Меча Лапа те очаква...</h2>
     </section>
-
-    <img src={device} alt="device" class="w-7/12 h-7/12">
+    <section class="w-80 h-80 flex justify-center items-center mb-40">
+        <Canvas>
+            <Scene />
+        </Canvas>
+    </section>
 
     {#if !$connected}
         <section class="flex gap-4 items-center">

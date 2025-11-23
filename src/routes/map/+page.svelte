@@ -2,7 +2,7 @@
     import { onMount } from 'svelte'
     import {Map, MapStyle, config, Marker, geocoding} from '@maptiler/sdk';
     import "@maptiler/sdk/dist/maptiler-sdk.css";
-    import {connected} from "../../connected";
+    import {connected} from "$stores/connected";
     import {pb} from "../../pb";
     import searchicon from '$lib/assets/search.svg'
     import Navbar from "$lib/components/Navbar.svelte";

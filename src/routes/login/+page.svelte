@@ -1,7 +1,7 @@
 <script lang="ts">
     import Navbar from "$lib/components/Navbar.svelte";
 
-    import {connected} from "../../connected";
+    import {connected} from "$stores/connected";
 </script>
 
 

@@ -2,8 +2,6 @@
 	import '../app.css';
     import '../fonts.css'
 	import favicon from '$lib/assets/favicon.svg';
-    import Navbar from "$lib/components/Navbar.svelte";
-	import {connected} from "../connected";
 
     let { children } = $props();
 </script>
