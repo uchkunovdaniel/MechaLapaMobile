@@ -3,8 +3,7 @@
     import {T, useLoader} from '@threlte/core';
     import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js";
 
-    // const gltf = useLoader(GLTFLoader).load("https://raw.githubusercontent.com/uchkunovdaniel/MechaLapaMobile/refs/heads/main/model3d/model.gltf");
-    const gltf = useLoader(GLTFLoader).load("");
+    const gltf = useLoader(GLTFLoader).load("https://raw.githubusercontent.com/uchkunovdaniel/MechaLapaMobile/refs/heads/main/3Dmodels/model.gltf");
 </script>
 
 <T.PerspectiveCamera

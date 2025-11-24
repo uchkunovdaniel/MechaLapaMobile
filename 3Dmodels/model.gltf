@@ -137,7 +137,7 @@
     "buffers": [
         {
             "byteLength": 165264,
-            "uri": "ml-body-silver_0.bin"
+            "uri": "model.bin"
         }
     ],
     "bufferViews": [
@@ -282,7 +282,7 @@
     ],
     "nodes": [
         {
-            "name": "ml-body-silver",
+            "name": "model",
             "children": [
                 1,
                 2
