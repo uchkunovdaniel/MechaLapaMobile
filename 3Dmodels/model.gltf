@@ -138,7 +138,7 @@
     "buffers": [
         {
             "byteLength": 416448,
-            "uri": "result.bin"
+            "uri": "model.bin"
         }
     ],
     "bufferViews": [
