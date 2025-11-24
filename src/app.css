@@ -11,6 +11,9 @@
         font-size: clamp(1rem, 3vw, 1.5rem);
         font-weight: 400;
     }
+    .muller-next{
+        font-family: 'MullerNext', sans-serif;
+    }
     .bg-shapes-r{
         background-image: url('../src/lib/assets/bg-shapes-r.svg');
         background-repeat: no-repeat;
@@ -34,7 +37,7 @@
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.11);
         background-blend-mode: lighten;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);

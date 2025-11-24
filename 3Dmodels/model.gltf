@@ -1,0 +1,336 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v5.4.0)"
+    },
+    "extensionsUsed": [
+        "KHR_materials_clearcoat",
+        "KHR_materials_volume",
+        "FB_ngon_encoding"
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 419,
+            "type": "VEC3",
+            "max": [
+                0.0028526464011520147,
+                0.001447181566618383,
+                0.004940104205161333
+            ],
+            "min": [
+                -0.0029312169644981623,
+                0.001447181566618383,
+                0.00010010442201746628
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 419,
+            "type": "VEC3",
+            "max": [
+                0.0,
+                1.0,
+                -0.0
+            ],
+            "min": [
+                0.0,
+                1.0,
+                -0.0
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 419,
+            "type": "VEC2",
+            "max": [
+                0.9999999403953552,
+                0.9999999403953552
+            ],
+            "min": [
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 1221,
+            "type": "SCALAR",
+            "max": [
+                418
+            ],
+            "min": [
+                0
+            ]
+        },
+        {
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 3307,
+            "type": "VEC3",
+            "max": [
+                0.005999998655170202,
+                0.0014471816830337048,
+                0.005999999586492777
+            ],
+            "min": [
+                -0.0060000005178153515,
+                -0.0014528183965012431,
+                -0.006000000052154064
+            ]
+        },
+        {
+            "bufferView": 5,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 3307,
+            "type": "VEC3",
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0
+            ]
+        },
+        {
+            "bufferView": 6,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 3307,
+            "type": "VEC2",
+            "max": [
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "bufferView": 7,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 10287,
+            "type": "SCALAR",
+            "max": [
+                3306
+            ],
+            "min": [
+                0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 165264,
+            "uri": "ml-body-silver_0.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 5028,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 5028,
+            "byteLength": 5028,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 10056,
+            "byteLength": 3352,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 13408,
+            "byteLength": 4884,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 18292,
+            "byteLength": 39684,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 57976,
+            "byteLength": 39684,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 97660,
+            "byteLength": 26456,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 124116,
+            "byteLength": 41148,
+            "target": 34963
+        }
+    ],
+    "images": [
+        {
+            "uri": "textures/image_0.png"
+        },
+        {
+            "uri": "textures/image_1.png"
+        },
+        {
+            "uri": "textures/image_2.png"
+        }
+    ],
+    "materials": [
+        {
+            "name": "Mat_1",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.002124688820913434,
+                    0.010959984734654427,
+                    0.0,
+                    1.0
+                ],
+                "roughnessFactor": 0.05999999865889549
+            },
+            "normalTexture": {
+                "index": 0
+            },
+            "extensions": {
+                "KHR_materials_clearcoat": {
+                    "clearcoatFactor": 0.03999999910593033,
+                    "clearcoatRoughnessFactor": 1.0,
+                    "clearcoatRoughnessTexture": {
+                        "index": 1
+                    }
+                }
+            }
+        },
+        {
+            "name": "Mat_2",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.8307698965072632,
+                    0.86314857006073,
+                    0.88791424036026,
+                    1.0
+                ],
+                "roughnessFactor": 0.07999999821186066
+            },
+            "extensions": {
+                "KHR_materials_clearcoat": {
+                    "clearcoatFactor": 0.03999999910593033,
+                    "clearcoatRoughnessFactor": 1.0,
+                    "clearcoatRoughnessTexture": {
+                        "index": 2
+                    }
+                }
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "meshes[0]",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 3,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "meshes[1]",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 1,
+                    "indices": 7,
+                    "attributes": {
+                        "POSITION": 4,
+                        "NORMAL": 5,
+                        "TEXCOORD_0": 6
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "ml-body-silver",
+            "children": [
+                1,
+                2
+            ]
+        },
+        {
+            "name": "mesh_0",
+            "mesh": 0
+        },
+        {
+            "name": "mesh_1",
+            "mesh": 1
+        }
+    ],
+    "samplers": [
+        {
+            "magFilter": 9729,
+            "minFilter": 9987
+        },
+        {
+            "magFilter": 9729,
+            "minFilter": 9987
+        },
+        {
+            "magFilter": 9729,
+            "minFilter": 9987
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "textures": [
+        {
+            "source": 0,
+            "sampler": 0
+        },
+        {
+            "source": 1,
+            "sampler": 1
+        },
+        {
+            "source": 2,
+            "sampler": 2
+        }
+    ],
+    "scene": 0
+}

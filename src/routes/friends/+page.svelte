@@ -1,7 +1,7 @@
 <script lang="ts">
     import Navbar from "$lib/components/Navbar.svelte";
     import {connected} from "$stores/connected";
-    import {pb} from "../../pb";
+    import {pb} from "$lib/utils/pb";
     import {onMount} from "svelte";
     import type {RecordModel} from "pocketbase";
     import Item from "$lib/components/Item.svelte";

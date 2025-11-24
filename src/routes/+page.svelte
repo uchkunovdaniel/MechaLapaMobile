@@ -73,7 +73,7 @@
         <h1 class="heading text-(--white) text-center">Здравей</h1>
         <h2 class="subheading text-(--white) text-center">Меча Лапа те очаква...</h2>
     </section>
-    <section class="w-80 h-80 flex justify-center items-center mb-40">
+    <section class="w-90 h-80 flex justify-center items-center mb-40">
         <Canvas>
             <Scene />
         </Canvas>

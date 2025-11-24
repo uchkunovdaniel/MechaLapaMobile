@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {pb} from "../../pb";
+    import {pb} from "$lib/utils/pb";
     import {goto} from "$app/navigation";
     import {connected} from "$stores/connected";
     import Navbar from "$lib/components/Navbar.svelte";

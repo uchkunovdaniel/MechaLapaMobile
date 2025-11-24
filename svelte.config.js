@@ -16,6 +16,7 @@ const config = {
 		alias: {
 			$components: 'src/lib/components',
 			$stores: 'src/lib/stores',
+            $utils: 'src/lib/utils',
 		},
         paths: {
             base: process.env.PUBLIC_BASE_PATH

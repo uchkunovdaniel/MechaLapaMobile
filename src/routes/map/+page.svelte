@@ -3,10 +3,10 @@
     import {Map, MapStyle, config, Marker, geocoding} from '@maptiler/sdk';
     import "@maptiler/sdk/dist/maptiler-sdk.css";
     import {connected} from "$stores/connected";
-    import {pb} from "../../pb";
+    import {pb} from "$utils/pb";
     import searchicon from '$lib/assets/search.svg'
     import Navbar from "$lib/components/Navbar.svelte";
-    import {Readings} from "../../readings";
+    import {Readings} from "$lib/utils/readings";
 
     let map: Map;
     let mapContainer: HTMLElement;

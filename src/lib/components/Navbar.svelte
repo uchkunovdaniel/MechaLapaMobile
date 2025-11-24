@@ -5,7 +5,9 @@
     import profile from '$lib/assets/profile.svg';
     import {goto} from "$app/navigation";
 
-    let {style}: {style?: string} = $props();
+    type Props = {style?: string};
+
+    let {style}: Props = $props();
 </script>
 
 <nav class="glassContainer w-80 h-16 flex justify-between items-center rounded-2xl {style}">
