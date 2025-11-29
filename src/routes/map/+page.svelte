@@ -6,7 +6,6 @@
     import {pb} from "$utils/pb";
     import searchicon from '$lib/assets/search.svg'
     import Navbar from "$lib/components/Navbar.svelte";
-    import {Readings} from "$lib/utils/readings";
 
     let map: Map;
     let mapContainer: HTMLElement;
@@ -32,16 +31,15 @@
 
     });
 
-    function displayMarker(lng: number, lat: number, data: any) {
+    function displayMarker(lng: number, lat: number, readings: any) {
         new Marker({color: "var(&#45;&#45;black)"})
             .setLngLat([lng, lat])
             .addTo(map)
             .getElement().addEventListener('click', async () => {
-                readings = new Readings(data)
-                console.log((await geocoding.reverse([ lng, lat ], {limit: 1, language: "local"})).features[0].place_name)
+                data = readings
         })
     }
-    let readings: Readings = $state(new Readings({}));
+    let data = $state()
 
 </script>
 
@@ -59,11 +57,12 @@
 
     <section class="w-full flex flex-col gap-4 mb-4">
         <h1 class="subheading text-center text-(--white)">Измерени стойности:</h1>
-        {#each readings.toArray().filter(val => !val.value?.startsWith('undefined') && !val.value?.startsWith('NaN')) as {value, type}}
-            <div class="glassContainer rounded-2xl w-full h-16 flex items-center justify-between px-4 text-(--white) text-center font-semibold text-lg leading-6 subheading">
-                {type}: {value}
-            </div>
-        {/each}
+            <ul class="flex flex-col gap-4 items-center">
+                <li class="glassContainer w-80 h-16 subheading text-(--white) rounded-xl">Температура: {data ? (data["temperature"]).toFixed(0) : 0} °C</li>
+                <li class="glassContainer w-80 h-16 subheading text-(--white) rounded-xl">Влажност: {data ? data["humidity"].toFixed(0) : 0} %</li>
+                <li class="glassContainer w-80 h-16 subheading text-(--white) rounded-xl">Надморска височина: {data ? (data["altitude"]).toFixed(0) : 0} m</li>
+                <li class="glassContainer w-80 h-16 subheading text-(--white) rounded-xl">Качество на въздуха: {data ? (data["iaq"]).toFixed(0) : 0} %</li>
+            </ul>
     </section>
 
     <Navbar style={"mt-auto"} />

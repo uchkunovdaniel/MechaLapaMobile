@@ -41,6 +41,7 @@
 		"@threlte/core": "^8.3.0",
 		"@threlte/extras": "^9.7.0",
 		"pocketbase": "^0.26.3",
+		"svelte-french-toast": "^1.2.0",
 		"svelte-openlayers": "^1.6.0",
 		"three": "^0.181.2"
 	}

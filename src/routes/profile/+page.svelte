@@ -24,8 +24,7 @@
     {/if}
     <ul class="flex flex-col gap-4 mt-10">
         <li><Button>Информация за профила</Button></li>
-        <li><Button>Добави локация</Button></li>
-        <li><Button>Качени локации</Button></li>
+        <li><Button onclick={() => goto("/add-location")}>Добави локация</Button></li>
         <li><Button>Характеристики</Button></li>
         <li><Button onclick={() => pb.authStore.clear()}>Изход</Button></li>
     </ul>
