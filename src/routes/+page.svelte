@@ -4,33 +4,25 @@
     import { Canvas } from "@threlte/core"
     import Scene from "$components/Scene.svelte";
     import {connected} from "$stores/connected";
+    import {Readings} from "$utils/readings";
     const SERVICE_UUID = "7d8b5ccd-ff95-4228-80fa-e7c51e09b54b"
     const CHARACTERISTIC_UUID = "90acaf49-dbdb-4c7b-8667-ada568397170"
 
-    async function scan() {
-        try {
-            await BleClient.initialize();
-            let ids: string[] = $state([])
-            await BleClient.requestLEScan({}, device => ids.push(device.device.deviceId));
-            setTimeout(async () => {
-                await BleClient.stopLEScan();
-                console.log(ids);
-            }, 2000);
-        } catch (error) {
-            console.error(error);
-        }
-    }
 
-    async function connect() {
+    async function connect(){
         try {
             await BleClient.initialize();
             const device = await BleClient.requestDevice({
                 services: [SERVICE_UUID]
             })
-            await BleClient.connect(device.deviceId).then(
-                () => {
+            await BleClient.connect(device.deviceId, () => $connected = false).then(
+                async () => {
                     console.log('connected to device', device.deviceId);
                     $connected = true
+                    await BleClient.startNotifications(device.deviceId, SERVICE_UUID, CHARACTERISTIC_UUID, (value) => {
+                        data = JSON.parse(dataViewToString(value));
+                        console.log(data["temperature"]);
+                    })
                 },
             )
         } catch (error) {
@@ -52,19 +44,12 @@
         }
     }
 
-    async function read() {
-        try {
-            // await BleClient.initialize()
-            BleClient.getConnectedDevices([SERVICE_UUID]).then(async devices => {
-                if (devices[0].name!.includes("Mecha Lapa")) {
-                    const res = await BleClient.read(devices[0].deviceId, SERVICE_UUID, CHARACTERISTIC_UUID)
-                    console.log(res.getUint8(0))
-                }})
-            // await BleClient.disconnect(id)
-        } catch (error) {
-            console.error(error);
-        }
+    function dataViewToString(dataView: DataView): string {
+        const decoder = new TextDecoder("utf-8");
+        return decoder.decode(dataView.buffer);
     }
+
+    let data = $state()
 
 </script>
 
@@ -75,10 +60,10 @@
     </section>
     <section class="w-90 h-80 flex justify-center items-center mb-40">
         <Canvas>
+            <div id="control" class="hidden"></div>
             <Scene />
         </Canvas>
     </section>
-
     {#if !$connected}
         <section class="flex gap-4 items-center">
             <div class="rounded-full bg-(--red) w-3 h-3">&nbsp;</div>
@@ -92,9 +77,16 @@
     {/if}
     {#if !$connected}
         <button class="glassContainer subheading mt-2 min-h-8 text-(--white) min-w-48 rounded-xl" onclick={async () => {await connect()}}>Свържи се</button>
-        {:else }
+    {:else }
+        <ul class="flex flex-col gap-4 items-center">
+            <li class="glassContainer w-80 h-16 subheading text-(--white) rounded-xl">Температура: {data ? (data["temperature"]-8).toFixed(0) : 0} °C</li>
+            <li class="glassContainer w-80 h-16 subheading text-(--white) rounded-xl">Влажност: {data ? data["humidity"].toFixed(0) : 0} %</li>
+            <li class="glassContainer w-80 h-16 subheading text-(--white) rounded-xl">Надморска височина: {data ? (data["altitude"] - 20).toFixed(0) : 0} m</li>
+            <li class="glassContainer w-80 h-16 subheading text-(--white) rounded-xl">Качество на въздуха: {data ? (data["iaq"] + 22 > 100 ? 100 : data["iaq"] + 22).toFixed(0) : 0} %</li>
+        </ul>
         <button class="glassContainer subheading mt-2 min-h-8 text-(--white) min-w-48 rounded-xl" onclick={async () => {await disconnect()}}>Прекрати връзка</button>
     {/if}
 
-    <Navbar style={"absolute bottom-8"} />
+    <Navbar style={"mt-auto mb-10 h-16 py-4"} />
+    <div class="h-16 w-full">&nbsp;</div>
 </main>

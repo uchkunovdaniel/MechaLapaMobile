@@ -1,6 +1,6 @@
 <script lang="ts">
 
-    type Props = {type?: string, id?: string, placeholder?:string, required?: boolean, name: string}
+    type Props = {type?: string, id?: string, placeholder?:string, required?: boolean, name?: string}
 
     let {type = "text",
         id,

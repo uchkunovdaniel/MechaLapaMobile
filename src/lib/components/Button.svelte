@@ -6,12 +6,15 @@
         id?: string,
         className?: string,
         onclick?: () => void
+        shimmer?: boolean
     }
 
     let {children,
         id,
         className,
-        onclick}: Props = $props();
+        onclick,
+        shimmer = true
+    }: Props = $props();
 
     onMount(() => {
         document.addEventListener("touchstart", function() {}, true);
@@ -23,19 +26,21 @@
 </button>
 
 
-<style>
-    .btn {
-        background: linear-gradient(45deg, rgba(255, 255, 255, 0.05) 40%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.05) 60%);
-        background-size: 300%;
-        background-position-x: 100%;
-    }
-    .btn:hover, .btn:focus, .btn:active {
-        animation: shimmer 1s linear;
-    }
-
-    @keyframes shimmer {
-        to{
-            background-position-x: 0;
+{#if shimmer}
+    <style>
+        .btn {
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.05) 40%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.05) 60%);
+            background-size: 300%;
+            background-position-x: 100%;
         }
-    }
-</style>
+        .btn:hover, .btn:focus, .btn:active {
+            animation: shimmer 1s linear;
+        }
+
+        @keyframes shimmer {
+            to{
+                background-position-x: 0;
+            }
+        }
+    </style>
+{/if}

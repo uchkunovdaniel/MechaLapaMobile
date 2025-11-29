@@ -9,8 +9,6 @@
     let error: boolean = $state(false);
 
     async function login() {
-        // if (!email || !password) return;
-        // const data = await pb.collection('users').authWithPassword(email, password);
         const form = document.getElementById("loginForm") as HTMLFormElement;
         const email = form.email.value;
         const password = form.password.value;
